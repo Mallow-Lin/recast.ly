@@ -1,6 +1,12 @@
+import VideoListEntry from './VideoListEntry.js';
+
 var VideoList = (props) => ( // interate over the array (map)
   <div className="video-list">
-    <div>{props.videos.map((video) => (<VideoListEntry video={video} />))}</div>
+    <div>
+      {props.videos.map((video) => (
+        <VideoListEntry video={video} />
+      ))}
+    </div>
   </div>
 );
 
