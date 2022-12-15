@@ -6,7 +6,6 @@
 //props.video.snippet.description
 //props.video.snippet.thumbnails.default.url
 
-
 var exampleVideoData = [
   {
     "kind": "youtube#searchResult",
