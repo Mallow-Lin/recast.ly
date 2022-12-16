@@ -1,22 +1,39 @@
 import exampleVideoData from '../data/exampleVideoData.js';
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
+import searchYoutube from '../lib/searchYouTube.js';
 
 class App extends React.Component {
 
   constructor(props) {
     super();
     this.state = {
-      videoData: exampleVideoData,
-      currentVideo: exampleVideoData[0]
+      videoData: [],
+      currentVideo: {}
     };
+    props.searchYoutube('', this.callbackFunctionOnSuccess);
   }
+  // props.searchYouTube: searchYouTube() {returns data}
 
-  videoPlayerState(video) {
+  callbackFunctionOnSuccess(data) {
     this.setState({
-      currentVideo: video
+      videoData: data,
+      currentVideo: data[0]
     });
   }
+
+  // API.GET().then((videos) => useState(videos)) into video
+  // searchYoutube(query = '', (data) => {
+  //   this.setState({
+  //     videoData: data,
+  //     currentVideo: data[0]
+  //   });
+  // });  // sending get to the api server
+  //useEffect will gather data then run function with data
+  //Searchyoutube takes in a query('', callback)
+   //^Callback is setState of videoData
+  //
+
 
   onClickVideoListEntry(video) {
     //event.target.name
@@ -24,8 +41,6 @@ class App extends React.Component {
     this.setState({
       currentVideo: video
     });
-    console.log('video is ', video);
-    console.log('clicked');
   }
 
 
