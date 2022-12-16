@@ -4,7 +4,7 @@ var VideoList = (props) => ( // interate over the array (map)
   <div className="video-list">
     <div>
       {props.videos.map((video) => (
-        <VideoListEntry video={video} />
+        <VideoListEntry video={video} handleClick = {props.handleClick}/>
       ))}
     </div>
   </div>
