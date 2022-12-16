@@ -2,11 +2,6 @@ import exampleVideoData from '../data/exampleVideoData.js';
 import VideoList from './VideoList.js';
 import VideoPlayer from './VideoPlayer.js';
 
-
-//this.videoData = exampleVideoData
-//this.currentVideo = exampleVideoData[0]
-//this.currentVideo = event.target.name <
-
 class App extends React.Component {
 
   constructor(props) {
@@ -61,9 +56,9 @@ class App extends React.Component {
 
 //videoList
 //videos (variable that is now a property of props)
-  //videos: exampleVideoData
+//videos: exampleVideoData
 //handClick (variable that is now a property of props)
-  //handleClick: (function)
+//handleClick: (function)
 
 //props.videos and props.handleClick
 
