@@ -5,8 +5,9 @@ import searchYouTube from '../lib/searchYouTube.js';
 import Search from './Search.js';
 
 var App = () => {
-  const {useState} = React;
-  const [videoList, setVideoList] = useState(exampleVideoData);
+  const {useState, useEffect} = React;
+
+  const [videoList, setVideoList] = useState([]);
   const [currentVideo, setCurrentVideo] = useState(exampleVideoData[0]);
 
 
@@ -19,11 +20,9 @@ var App = () => {
     searchYouTube(query, callbackFunctionOnSuccess);
   };
 
-  const { useEffect } = React;
-
   useEffect (() => {
     searchVideos;
-  }, []);
+  }, [videoList]);
 
 
   var onClickVideoListEntry = (video) => {

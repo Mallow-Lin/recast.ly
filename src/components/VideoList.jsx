@@ -2,13 +2,17 @@ import VideoListEntry from './VideoListEntry.js';
 
 var VideoList = (props) => ( // interate over the array (map)
   <div className="video-list">
-    <div>
-      {props.videos.map((video) => (
-        <VideoListEntry video={video} handleClick = {props.handleClick}/>
-      ))}
-    </div>
+    {props.videos.map((video) => (
+      <VideoListEntry video={video} handleClick = {props.handleClick}/>
+    ))}
   </div>
 );
+
+//props.video
+//video: exampleData [i]
+
+//props.handleClick
+//handleClick: props.handleClick = function that was passed from app.js
 
 //<div><h5><em>props.videos.map</em> view goes here</h5></div>
 
